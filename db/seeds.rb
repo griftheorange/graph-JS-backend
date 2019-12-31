@@ -8,7 +8,7 @@
 
 User.destroy_all()
 Dataset.destroy_all()
-Graph.destroy_all()
+BarGraph.destroy_all()
 
 User.create({
     username: :griff,

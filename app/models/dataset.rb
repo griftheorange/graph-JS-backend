@@ -1,6 +1,6 @@
 class Dataset < ApplicationRecord
     belongs_to :user
-    has_many :graphs, dependent: :destroy
+    has_many :bar_graphs, dependent: :destroy
 
     validates :name, presence: true
     validates :user_id, presence: true
