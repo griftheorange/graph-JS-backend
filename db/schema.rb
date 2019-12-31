@@ -19,14 +19,18 @@ ActiveRecord::Schema.define(version: 2019_12_20_220100) do
     t.string "name"
     t.string "description"
     t.string "csv_url"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_datasets_on_user_id"
   end
 
   create_table "graphs", force: :cascade do |t|
     t.string "graph_type"
+    t.bigint "dataset_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dataset_id"], name: "index_graphs_on_dataset_id"
   end
 
   create_table "users", force: :cascade do |t|

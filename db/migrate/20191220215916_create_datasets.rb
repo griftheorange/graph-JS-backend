@@ -4,6 +4,7 @@ class CreateDatasets < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :description
       t.string :csv_url
+      t.belongs_to :user
 
       t.timestamps
     end

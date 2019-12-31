@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all()
+Dataset.destroy_all()
+Graph.destroy_all()
 
 User.create({
     username: :griff,
