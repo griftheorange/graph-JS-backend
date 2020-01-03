@@ -4,9 +4,19 @@ class BarGraphsController < ApplicationController
         render json: @bar_graphs
     end
 
+    def show
+        @bar_graph = BarGraph.find_by(id: params["id"])
+        render json: @bar_graph
+    end
+
     def destroy
         bar = BarGraph.find_by(id: params[:id]).destroy()
         render json: bar
+    end
+
+    def update
+        @bar_graph = BarGraph.find_by(id: params[:id])
+        render json: @bar_graph.update(p)
     end
 
     def create
@@ -21,7 +31,7 @@ class BarGraphsController < ApplicationController
 
     private
 
-    def seriesHashed
-        
+    def p
+        params.permit(:description)
     end
 end

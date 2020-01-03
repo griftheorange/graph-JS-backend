@@ -5,6 +5,11 @@ class DatasetsController < ApplicationController
         render json: @datasets
     end
 
+    def show
+        @dataset = Dataset.find_by(id: params["id"])
+        render json: @dataset
+    end
+
     #TODO Need to change so that successful delete destroys file on cloudinary backend
     def destroy
         ds = Dataset.find_by(id: params[:id]).destroy()
