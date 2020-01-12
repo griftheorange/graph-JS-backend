@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_150201) do
+ActiveRecord::Schema.define(version: 2020_01_12_200855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 2020_01_03_150201) do
     t.index ["dataset_id"], name: "index_line_graphs_on_dataset_id"
   end
 
+  create_table "pie_graphs", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "xAxis"
+    t.string "flattenedSeries"
+    t.bigint "dataset_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dataset_id"], name: "index_pie_graphs_on_dataset_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
@@ -54,4 +65,5 @@ ActiveRecord::Schema.define(version: 2020_01_03_150201) do
   end
 
   add_foreign_key "line_graphs", "datasets"
+  add_foreign_key "pie_graphs", "datasets"
 end
