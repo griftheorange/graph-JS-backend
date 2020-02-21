@@ -14,4 +14,33 @@ Unfortunately, this repo does not support local cloning and settup at this time.
 " target="_blank"><img src="http://img.youtube.com/vi/ua4csPpWLk8/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" style="margin: auto"/></a>
 
-## Component
+## Models
+
+The models for this project are as follows: 
+
+    Users -< Datasets
+    Datasets -< LineGraphs
+    Datasets -< BarGraphs
+    Datasets -< PieGraphs
+
+With Users having many Datasets, and Datasets having many Line, Bar and Pie Graphs.
+
+### Users
+
+The users model exclusively keeps track of it's username and password
+
+### Datasets
+
+Datasets keeps track of it's name, the id of the user that owns it, and a CSV URL that links to the Cloudinary host saving the file. This URL is what the frontent uses to retrieve the data file for re-parsing on subsequent visits
+
+### Graphs
+
+I've collected the three models into one description because they can be optimized down into one at a later date. They all keep track of five things:
+
+- The Dataset ID of the DS they belong to
+- Their Title
+- Their Description
+- A stringified xAxis array that contains a keyword for column or row, and a number of that column/row
+- A flattenedSeries Array that contains a stringified array of series, each series formatted similarly to the xAxis array
+
+The graphs persist only the data needed to re-locate the info in their corresponding datafile. On the frontend, once a datafile is re-fetched and graph specs for it fetch from the backend, the front-end handles the re-parsing and generation of each graph on-site.
