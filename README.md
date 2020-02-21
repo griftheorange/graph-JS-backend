@@ -8,8 +8,10 @@ The result is simple enough, but was great practice for learning D3's features f
 
 ## Settup
 
-Unfortunately, this repo does not support local cloning and settup at this time. It may eventually be deployed via Heroku, github io or some other medium, but in the meantime please feel free to watch the following for an example demonstration. We are sorry for the inconvenience.
+Unfortunately, this repo does not support local cloning and settup at this time. It may eventually be deployed via Heroku, github.io or another medium, but in the meantime please feel free to watch the following for an example demonstration. We are sorry for the inconvenience.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=ua4csPpWLk8
 " target="_blank"><img src="http://img.youtube.com/vi/ua4csPpWLk8/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" style="margin: auto"/></a>
+
+## Component
