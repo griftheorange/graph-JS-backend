@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_01_12_200855) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "bar_graphs", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -29,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_01_12_200855) do
     t.string "name"
     t.string "description"
     t.string "csv_url"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_datasets_on_user_id"
@@ -40,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_01_12_200855) do
     t.string "description"
     t.string "xAxis"
     t.string "flattenedSeries"
-    t.bigint "dataset_id", null: false
+    t.integer "dataset_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dataset_id"], name: "index_line_graphs_on_dataset_id"
@@ -51,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_01_12_200855) do
     t.string "description"
     t.string "xAxis"
     t.string "flattenedSeries"
-    t.bigint "dataset_id", null: false
+    t.integer "dataset_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dataset_id"], name: "index_pie_graphs_on_dataset_id"
